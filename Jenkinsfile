@@ -13,7 +13,7 @@ pipeline {
         '''
      }
    }
-      post{
+      post {
         success{
             slackSend( channel: "deployment3-pipeline-alerts", token: "hUUgl0TLbmUvE5XCilGOS8r3", color: "good", message: "Your build is Successful")
         }
