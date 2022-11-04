@@ -13,6 +13,15 @@ pipeline {
         '''
      }
    }
+      post{
+        success{
+            slackSend( channel: "deployment3-pipeline-alerts", token: "hUUgl0TLbmUvE5XCilGOS8r3", color: "good", message: "Your build is Successful")
+        }
+         failure{
+            slackSend( channel: "deployment3-pipeline-alerts", token: "hUUgl0TLbmUvE5XCilGOS8r3", color: "warning", message: "Your build failed")
+         }
+       }
+     
     stage ('test') {
       steps {
         sh '''#!/bin/bash
